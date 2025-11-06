@@ -1,8 +1,8 @@
 ersion: 0.0
 os: linux
 files:
-  - source: /source/path
-    destination: /destination/path
+  - source: /
+    destination: /var/www/html
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
