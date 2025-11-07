@@ -2,8 +2,9 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: latest
+    commands:
+      - nvm install node
+      - node -v
     commands:
       - echo "Installing dependencies"
       - npm install  
