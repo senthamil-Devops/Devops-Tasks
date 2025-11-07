@@ -7,8 +7,8 @@ phases:
     commands:
       - echo "Installing dependencies"
       - npm install  
-build:
-    commands:
+   build:
+     commands:
       - echo "Build phase started"
       - systemctl start nodejs
    
