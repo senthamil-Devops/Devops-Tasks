@@ -3,15 +3,28 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      python: 3.9  # Specify the Python version
     commands:
-      - echo "Installing dependencies"
-      - npm install
+      - echo Installing dependencies...
+      - pip install --upgrade pip
+      - pip install -r requirements.txt  # Install dependencies from requirements.txt
+
+  pre_build:
+    commands:
+      - echo Running pre-build steps...
+      - python -m unittest discover -s tests  # Run unit tests (optional)
+
   build:
     commands:
-      - echo "Build phase started"
-      - npm run start
+      - echo Building the application...
+      - python setup.py sdist bdist_wheel  # Example: Build a Python package
+
+  post_build:
+    commands:
+      - echo Build completed successfully!
+      - echo Packaging or deploying the application...
 
 artifacts:
   files:
-    - "**/*"
+    - '**/*'  # Include all files in the build output
+  discard-paths: no
