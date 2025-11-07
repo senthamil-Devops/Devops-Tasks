@@ -7,6 +7,10 @@ phases:
     commands:
       - echo "Installing dependencies"
       - yum install nodejs
+       build:
+    commands:
+      - echo "Build phase started"
+      - systemctl start nodejs
    
 
 artifacts:
