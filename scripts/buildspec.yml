@@ -6,7 +6,7 @@ phases:
       nodejs: latest
     commands:
       - echo "Installing dependencies"
-      - yum install  
+      - npm install  
 build:
     commands:
       - echo "Build phase started"
