@@ -6,7 +6,8 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - npm install  
+      - sudo apt-get update
+      - sudo apt-install  
    build:
      commands:
       - echo "Build phase started"
