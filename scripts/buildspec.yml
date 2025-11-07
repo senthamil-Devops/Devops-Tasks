@@ -7,10 +7,16 @@ phases:
     commands:
       - echo "Installing dependencies"
       - npm install -g mocha
+   pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - npm install unit.js
   build:
     commands:
-      - echo "Build phase started"
-      - npm run start
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - mocha test.js
 
 artifacts:
   files:
