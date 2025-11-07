@@ -3,10 +3,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: latest
     commands:
       - echo "Installing dependencies"
-      - yum install
+      - yum install nodejs -y
        build:
     commands:
       - echo "Build phase started"
